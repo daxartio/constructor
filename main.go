@@ -55,7 +55,7 @@ func main() {
 		}
 
 		if *write {
-			filename := fmt.Sprintf(*format, LowerFirst(CamelCase(strct.Name)))
+			filename := fmt.Sprintf(*format, strings.ToLower(strct.Name))
 			fullpath := path.Join(*packagePath, filename)
 
 			err := os.WriteFile(fullpath, []byte(src), 0644)
